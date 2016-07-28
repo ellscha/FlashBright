@@ -43,7 +43,7 @@
                                 </connections>
                             </slider>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Zja-80-94g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6jI-Yh-rQO"/>
                             <constraint firstItem="qY0-Fd-rDX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BJU-u6-8cu"/>

@@ -23,8 +23,11 @@
                                     <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
                                 </connections>
                             </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.10000000000000001" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
                                 <rect key="frame" x="253" y="361" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="ial-s7-Fgv"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

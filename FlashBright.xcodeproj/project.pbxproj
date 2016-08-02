@@ -14,6 +14,8 @@
 		4D325FF71D48D6B00019B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D325FF51D48D6B00019B650 /* LaunchScreen.storyboard */; };
 		4D75644F1D50D97600AEC067 /* StrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75644E1D50D97600AEC067 /* StrobeViewController.swift */; };
 		4D7564511D50D9AF00AEC067 /* StrobeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7564501D50D9AF00AEC067 /* StrobeStoryboard.storyboard */; };
+		4D7564541D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.47 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D7564521D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.47 PM.png */; };
+		4D7564551D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.38 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D7564531D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.38 PM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4D325FF81D48D6B00019B650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D75644E1D50D97600AEC067 /* StrobeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrobeViewController.swift; sourceTree = "<group>"; };
 		4D7564501D50D9AF00AEC067 /* StrobeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrobeStoryboard.storyboard; sourceTree = "<group>"; };
+		4D7564521D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.47 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-08-02 at 3.19.47 PM.png"; sourceTree = "<group>"; };
+		4D7564531D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.38 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-08-02 at 3.19.38 PM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				4D325FF31D48D6B00019B650 /* Assets.xcassets */,
 				4D325FF51D48D6B00019B650 /* LaunchScreen.storyboard */,
 				4D325FF81D48D6B00019B650 /* Info.plist */,
+				4D7564531D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.38 PM.png */,
+				4D7564521D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.47 PM.png */,
 			);
 			path = FlashBright;
 			sourceTree = "<group>";
@@ -130,8 +136,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D325FF71D48D6B00019B650 /* LaunchScreen.storyboard in Resources */,
+				4D7564541D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.47 PM.png in Resources */,
 				4D325FF41D48D6B00019B650 /* Assets.xcassets in Resources */,
 				4D7564511D50D9AF00AEC067 /* StrobeStoryboard.storyboard in Resources */,
+				4D7564551D5129F300AEC067 /* Screen Shot 2016-08-02 at 3.19.38 PM.png in Resources */,
 				4D325FF21D48D6B00019B650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

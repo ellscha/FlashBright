@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class StrobeViewController: UIViewController {
+    //I want the stepper to affect the strobe light in real time. I also want the intensity slider to affect in real time. I want flashlight to take precedence? Or keep it to no interaction?
     
     @IBOutlet weak var switchStrobe: UISwitch!
     @IBOutlet weak var stepperStrobe: UIStepper!
@@ -21,6 +22,10 @@ class StrobeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let slowImage = UIImage.init(named: "slow")
+//        let fastImage = UIImage.init(named: "fast")
+//        stepperStrobe.setIncrementImage(fastImage, forState: .Normal)
+//        stepperStrobe.setDecrementImage(slowImage, forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +36,7 @@ class StrobeViewController: UIViewController {
     @IBAction func toggleStrobe(sender: UISwitch) {
         
         if switchStrobe.on{
-           strobeTheLight()
+           strobeTheLight(stepperStrobe.value)
             print("strobe is on")
 
         }else{
@@ -72,17 +77,27 @@ class StrobeViewController: UIViewController {
         print("light is off")
     }
     
-    func strobeTheLight(){
+    func strobeTheLight(stepperValue: Double){
         
-        performSelector(#selector(self.delayLightOff), withObject: nil, afterDelay: 0.1)
+        let stepperValueAbs = fabs(stepperValue)
+        performSelector(#selector(self.delayLightOff(_:)), withObject: nil, afterDelay: 0.1)
 
-         onTimer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector:#selector(self.turnLightOn), userInfo: nil, repeats: true)
+         onTimer = NSTimer.scheduledTimerWithTimeInterval(stepperValueAbs, target: self, selector:#selector(self.turnLightOn), userInfo: nil, repeats: true)
 
     }
     
-    func delayLightOff(){
+    func delayLightOff(stepperValue: Double){
+        let stepperValueAbs = fabs(stepperValue)
+
+        offTimer = NSTimer.scheduledTimerWithTimeInterval(stepperValueAbs, target: self, selector:#selector(self.turnLightOff), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func stepperChanged(sender: UIStepper) {
+        onTimer.invalidate()
+        offTimer.invalidate()
+        strobeTheLight(sender.value)
         
-        offTimer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector:#selector(self.turnLightOff), userInfo: nil, repeats: true)
+        
     }
     
     

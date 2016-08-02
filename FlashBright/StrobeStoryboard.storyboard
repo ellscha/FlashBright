@@ -55,10 +55,16 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pOQ-iy-Cq8">
                                 <rect key="frame" x="276" y="135" width="51" height="31"/>
                                 <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="toggleFlashlight:" destination="uha-mG-RO4" eventType="valueChanged" id="ZgD-qt-Bd2"/>
+                                </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
                                 <rect key="frame" x="73" y="185" width="454" height="31"/>
                                 <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="8c5-cI-5jk"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,7 +93,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sliderFlashlight" destination="4Z2-Xh-3SX" id="bob-li-ZIZ"/>
                         <outlet property="stepperStrobe" destination="n3S-LU-jhd" id="fk9-FI-9Rs"/>
+                        <outlet property="switchFlashlight" destination="pOQ-iy-Cq8" id="VVt-d8-ytO"/>
                         <outlet property="switchStrobe" destination="0Qf-Ee-DZn" id="wFa-KF-hT5"/>
                     </connections>
                 </viewController>

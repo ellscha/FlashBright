@@ -15,8 +15,9 @@ class StrobeViewController: UIViewController {
     @IBOutlet weak var stepperStrobe: UIStepper!
     
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-    let timer = NSTimer()
-
+    var onTimer = NSTimer()
+    var offTimer = NSTimer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,31 +31,59 @@ class StrobeViewController: UIViewController {
     @IBAction func toggleStrobe(sender: UISwitch) {
         
         if switchStrobe.on{
-            
-            do {
-                try device.lockForConfiguration()
-                
-                    device.torchMode = AVCaptureTorchMode.On
-                    device.unlockForConfiguration()
-            }catch{
-                print("error turning on")
-            }
+           strobeTheLight()
             print("strobe is on")
+
         }else{
-            
-            do {
-                try device.lockForConfiguration()
-                
-                device.torchMode = AVCaptureTorchMode.Off
-                device.unlockForConfiguration()
-            }catch{
-                print("error turning off")
-            }
-
+            onTimer.invalidate()
+            offTimer.invalidate()
+            turnLightOff()
             print("strobe is off")
-        }
 
+        }
+    
+    }
+    
+    func turnLightOn(){
+        
+        do {
+            try device.lockForConfiguration()
+            
+            device.torchMode = AVCaptureTorchMode.On
+            device.unlockForConfiguration()
+        }catch{
+            print("error turning on")
+        }
+        print("light is on")
         
     }
+
+    func turnLightOff(){
+        do {
+            try device.lockForConfiguration()
+            
+            device.torchMode = AVCaptureTorchMode.Off
+            device.unlockForConfiguration()
+        }catch{
+            
+            print("error turning off")
+        }
+        
+        print("light is off")
+    }
+    
+    func strobeTheLight(){
+        
+        performSelector(#selector(self.delayLightOff), withObject: nil, afterDelay: 0.1)
+
+         onTimer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector:#selector(self.turnLightOn), userInfo: nil, repeats: true)
+
+    }
+    
+    func delayLightOff(){
+        
+        offTimer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector:#selector(self.turnLightOff), userInfo: nil, repeats: true)
+    }
+    
     
 }

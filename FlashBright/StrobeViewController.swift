@@ -18,7 +18,7 @@ class StrobeViewController: UIViewController {
     @IBOutlet weak var switchFlashlight: UISwitch!
     @IBOutlet weak var sliderFlashlight: UISlider!
     
-    
+
     
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var onTimer = NSTimer()
@@ -94,7 +94,7 @@ class StrobeViewController: UIViewController {
         }catch{
             print("error turning on")
         }
-        print("light is on")
+        //print("light is on")
         
     }
     
@@ -109,7 +109,7 @@ class StrobeViewController: UIViewController {
             print("error turning off")
         }
         
-        print("light is off")
+        //print("light is off")
     }
     
     func strobeTheLight(stepperValue: Double){
@@ -130,6 +130,7 @@ class StrobeViewController: UIViewController {
     @IBAction func stepperChanged(sender: UIStepper) {
         onTimer.invalidate()
         offTimer.invalidate()
+        print(sender.value)
         strobeTheLight(sender.value)
         
         

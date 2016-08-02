@@ -52,7 +52,7 @@
                                     <action selector="toggleFlashlight:" destination="uha-mG-RO4" eventType="valueChanged" id="ZgD-qt-Bd2"/>
                                 </connections>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
                                 <rect key="frame" x="73" y="205" width="454" height="31"/>
                                 <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>

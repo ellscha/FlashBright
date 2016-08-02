@@ -18,7 +18,7 @@ class StrobeViewController: UIViewController {
     @IBOutlet weak var switchFlashlight: UISwitch!
     @IBOutlet weak var sliderFlashlight: UISlider!
     
-
+    
     
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var onTimer = NSTimer()
@@ -27,9 +27,9 @@ class StrobeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if switchFlashlight.on == false {
-            self.sliderFlashlight.enabled = true
-        }
+        switchStrobe.enabled = true
+        switchFlashlight.enabled = true
+        
         //        let slowImage = UIImage.init(named: "slow")
         //        let fastImage = UIImage.init(named: "fast")
         //        stepperStrobe.setIncrementImage(fastImage, forState: .Normal)
@@ -39,10 +39,11 @@ class StrobeViewController: UIViewController {
     
     @IBAction func toggleFlashlight(sender: AnyObject) {
         if switchFlashlight.on {
-            sliderFlashlight.enabled = true
+//            sliderFlashlight.enabled = true
             sliderValueChanged(sliderFlashlight)
+            switchStrobe.enabled = false
         }else{
-            sliderFlashlight.enabled = false
+            switchStrobe.enabled = true
             turnLightOff()
         }
         
@@ -50,19 +51,21 @@ class StrobeViewController: UIViewController {
     
     @IBAction func sliderValueChanged(sender: UISlider!) {
         //        let device: AVCaptureDevice! = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        let currentValue : Float = sender.value
-        do {
-            try device.lockForConfiguration()
+        if switchFlashlight.on{
+            let currentValue : Float = sender.value
             do {
-                try device.setTorchModeOnWithLevel(currentValue)
+                try device.lockForConfiguration()
+                do {
+                    try device.setTorchModeOnWithLevel(currentValue)
+                } catch {
+                    print("error changing levels")
+                }
+                device.unlockForConfiguration()
             } catch {
-                print("error changing levels")
+                print("error with configuration")
             }
-            device.unlockForConfiguration()
-        } catch {
-            print("error with configuration")
+            
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,8 +78,10 @@ class StrobeViewController: UIViewController {
         if switchStrobe.on{
             strobeTheLight(stepperStrobe.value)
             print("strobe is on")
+            switchFlashlight.enabled = false
             
         }else{
+            switchFlashlight.enabled = true
             onTimer.invalidate()
             offTimer.invalidate()
             turnLightOff()
@@ -131,7 +136,9 @@ class StrobeViewController: UIViewController {
         onTimer.invalidate()
         offTimer.invalidate()
         print(sender.value)
-        strobeTheLight(sender.value)
+        if switchStrobe.on{
+            strobeTheLight(sender.value)
+        }
         
         
     }

@@ -22,34 +22,50 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rn-n5-DrN" userLabel="Strobe View">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </containerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
-                                <rect key="frame" x="270" y="434" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
+                                <rect key="frame" x="276" y="434" width="51" height="31"/>
                                 <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
-                                <rect key="frame" x="205" y="390" width="191" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
+                                <rect key="frame" x="226" y="388" width="148" height="25"/>
                                 <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.10000000000000001" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
-                                <rect key="frame" x="240" y="484" width="94" height="29"/>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.10000000000000001" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
+                                <rect key="frame" x="253" y="484" width="94" height="29"/>
+                                <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="ial-s7-Fgv"/>
                                 </connections>
                             </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Flashlight Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-tN-ykP">
+                                <rect key="frame" x="212" y="91" width="176" height="25"/>
+                                <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pOQ-iy-Cq8">
+                                <rect key="frame" x="276" y="135" width="51" height="31"/>
+                                <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
+                                <rect key="frame" x="73" y="185" width="454" height="31"/>
+                                <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rn-n5-DrN" userLabel="Strobe View">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="n3S-LU-jhd" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="3vj-fL-uOb"/>
+                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="centerY" secondItem="Jif-cz-u95" secondAttribute="centerY" id="4CL-Hf-mPV"/>
+                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="top" secondItem="pOQ-iy-Cq8" secondAttribute="bottom" constant="19" id="75M-XO-dLM"/>
                             <constraint firstItem="0Qf-Ee-DZn" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="866-ui-rrl"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="height" secondItem="1Sj-0o-Z5Y" secondAttribute="height" multiplier="0.5" id="9Xd-Px-v9a"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="centerX" secondItem="1Sj-0o-Z5Y" secondAttribute="centerX" id="9qX-I8-lI8"/>
@@ -59,9 +75,14 @@
                             <constraint firstItem="0Qf-Ee-DZn" firstAttribute="top" secondItem="Ecb-lB-RFA" secondAttribute="bottom" constant="21" id="MZC-cf-20D"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="centerX" secondItem="1Sj-0o-Z5Y" secondAttribute="centerX" id="NsG-U7-9l1"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="top" secondItem="eDd-3i-Qtb" secondAttribute="bottom" constant="-20" id="OEt-Dn-fm1"/>
+                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="SY8-zC-fLj"/>
+                            <constraint firstItem="CJG-tN-ykP" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="TnJ-I6-Sjp"/>
                             <constraint firstItem="Ecb-lB-RFA" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="XKf-s3-EGs"/>
+                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" multiplier="0.75" id="YYL-hh-xvn"/>
+                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="top" secondItem="CJG-tN-ykP" secondAttribute="bottom" constant="32" id="hGQ-OE-FpT"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" id="jSh-Wm-tFV"/>
                             <constraint firstItem="anq-P7-kbJ" firstAttribute="top" secondItem="7rn-n5-DrN" secondAttribute="bottom" id="tX4-zZ-usL"/>
+                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="uXR-Xg-2Qd"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="height" secondItem="Jif-cz-u95" secondAttribute="height" id="vmj-ah-aG7"/>
                         </constraints>
                     </view>

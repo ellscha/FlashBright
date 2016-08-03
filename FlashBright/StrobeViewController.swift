@@ -34,17 +34,12 @@ class StrobeViewController: UIViewController {
         
         
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-
-        //        let slowImage = UIImage.init(named: "slow")
-        //        let fastImage = UIImage.init(named: "fast")
-        //        stepperStrobe.setIncrementImage(fastImage, forState: .Normal)
-        //        stepperStrobe.setDecrementImage(slowImage, forState: .Normal)
     }
     
     
     @IBAction func toggleFlashlight(sender: AnyObject) {
         if switchFlashlight.on {
-//            sliderFlashlight.enabled = true
+            //            sliderFlashlight.enabled = true
             sliderValueChanged(sliderFlashlight)
             switchStrobe.enabled = false
         }else{
@@ -55,7 +50,6 @@ class StrobeViewController: UIViewController {
     }
     
     @IBAction func sliderValueChanged(sender: UISlider!) {
-        //        let device: AVCaptureDevice! = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         if switchFlashlight.on{
             let currentValue : Float = sender.value
             do {
@@ -73,10 +67,6 @@ class StrobeViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func toggleStrobe(sender: UISwitch) {
         
@@ -97,11 +87,8 @@ class StrobeViewController: UIViewController {
             alertController.addAction(OKAction)
             
             self.presentViewController(alertController, animated: true) {
+                //To show alert.
             }
-//            strobeTheLight(stepperStrobe.value)
-//            print("strobe is on")
-//            switchFlashlight.enabled = false
-            
         }else{
             switchFlashlight.enabled = true
             onTimer.invalidate()
@@ -121,8 +108,6 @@ class StrobeViewController: UIViewController {
         }catch{
             print("error turning on")
         }
-        //print("light is on")
-        
     }
     
     func turnLightOff(){
@@ -135,8 +120,6 @@ class StrobeViewController: UIViewController {
             
             print("error turning off")
         }
-        
-        //print("light is off")
     }
     
     func strobeTheLight(stepperValue: Double){

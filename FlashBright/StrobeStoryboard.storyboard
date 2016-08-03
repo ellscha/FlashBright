@@ -27,28 +27,28 @@
                                 <color key="backgroundColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="09P-8W-mDC">
-                                <rect key="frame" x="226" y="388" width="148" height="105"/>
+                                <rect key="frame" x="226" y="388" width="450" height="106"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
-                                        <rect key="frame" x="0.0" y="1" width="148" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
+                                        <rect key="frame" x="151" y="0.0" width="148" height="25"/>
                                         <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
-                                        <rect key="frame" x="50" y="36" width="51" height="31"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
+                                        <rect key="frame" x="201" y="35" width="51" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
                                         </connections>
                                     </switch>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
-                                        <rect key="frame" x="27" y="77" width="94" height="29"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minValue="-1" maxValue="-0.01" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-q0-zcl">
+                                        <rect key="frame" x="-2" y="76" width="454" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="ial-s7-Fgv"/>
+                                            <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="I4Y-5i-ASl"/>
                                         </connections>
-                                    </stepper>
+                                    </slider>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dZS-ga-E22">
@@ -89,6 +89,7 @@
                             <constraint firstItem="dZS-ga-E22" firstAttribute="centerY" secondItem="Jif-cz-u95" secondAttribute="centerY" id="OWF-Wu-Dbh"/>
                             <constraint firstItem="4Z2-Xh-3SX" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" multiplier="0.75" id="Quw-ag-JhO"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" id="jSh-Wm-tFV"/>
+                            <constraint firstItem="DAr-q0-zcl" firstAttribute="width" secondItem="7rn-n5-DrN" secondAttribute="width" multiplier="0.75" id="pbf-5Z-Lwz"/>
                             <constraint firstItem="09P-8W-mDC" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="s8O-QK-70K"/>
                             <constraint firstItem="dZS-ga-E22" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="tGb-r2-XJp"/>
                             <constraint firstItem="anq-P7-kbJ" firstAttribute="top" secondItem="7rn-n5-DrN" secondAttribute="bottom" id="tX4-zZ-usL"/>
@@ -97,7 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="sliderFlashlight" destination="4Z2-Xh-3SX" id="bob-li-ZIZ"/>
-                        <outlet property="stepperStrobe" destination="n3S-LU-jhd" id="fk9-FI-9Rs"/>
+                        <outlet property="sliderStrobe" destination="DAr-q0-zcl" id="2Hr-Q0-qB1"/>
                         <outlet property="switchFlashlight" destination="pOQ-iy-Cq8" id="VVt-d8-ytO"/>
                         <outlet property="switchStrobe" destination="0Qf-Ee-DZn" id="wFa-KF-hT5"/>
                     </connections>

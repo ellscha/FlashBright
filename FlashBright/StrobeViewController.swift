@@ -15,7 +15,7 @@ class StrobeViewController: UIViewController {
     //I want the stepper to affect the strobe light in real time. I also want the intensity slider to affect in real time. I want flashlight to take precedence? Or keep it to no interaction?
     
     @IBOutlet weak var switchStrobe: UISwitch!
-    @IBOutlet weak var stepperStrobe: UIStepper!
+    @IBOutlet weak var sliderStrobe: UISlider!
     
     @IBOutlet weak var switchFlashlight: UISwitch!
     @IBOutlet weak var sliderFlashlight: UISlider!
@@ -71,7 +71,7 @@ class StrobeViewController: UIViewController {
     @IBAction func toggleStrobe(sender: UISwitch) {
         
         if switchStrobe.on{
-            let alertController = UIAlertController(title: "Strobe Warning", message: "Caution, strobe will begin upon clicking 'OK', to cancel press 'Canel'.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Strobe Warning", message: "Strobe light effect warning. If you suffer from epilepsy & other visual light stimulation, please click 'Cancel'.", preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
                 print("cancelled strobe for caution.")
@@ -81,7 +81,7 @@ class StrobeViewController: UIViewController {
             alertController.addAction(cancelAction)
             
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                self.strobeTheLight(self.stepperStrobe.value)
+                self.strobeTheLight(Double(self.sliderStrobe.value))
                 print("strobe is on")
                 self.switchFlashlight.enabled = false            }
             alertController.addAction(OKAction)
@@ -137,12 +137,12 @@ class StrobeViewController: UIViewController {
         offTimer = NSTimer.scheduledTimerWithTimeInterval(stepperValueAbs, target: self, selector:#selector(self.turnLightOff), userInfo: nil, repeats: true)
     }
     
-    @IBAction func stepperChanged(sender: UIStepper) {
+    @IBAction func stepperChanged(sender: UISlider) {
         onTimer.invalidate()
         offTimer.invalidate()
         print(sender.value)
         if switchStrobe.on{
-            strobeTheLight(sender.value)
+            strobeTheLight(Double(sender.value))
         }
         
         

@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import AVFoundation.AVAudioSession
+
 
 class StrobeViewController: UIViewController {
     //I want the stepper to affect the strobe light in real time. I also want the intensity slider to affect in real time. I want flashlight to take precedence? Or keep it to no interaction?
@@ -30,6 +32,9 @@ class StrobeViewController: UIViewController {
         switchStrobe.enabled = true
         switchFlashlight.enabled = true
         
+        
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+
         //        let slowImage = UIImage.init(named: "slow")
         //        let fastImage = UIImage.init(named: "fast")
         //        stepperStrobe.setIncrementImage(fastImage, forState: .Normal)

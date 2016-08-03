@@ -76,9 +76,26 @@ class StrobeViewController: UIViewController {
     @IBAction func toggleStrobe(sender: UISwitch) {
         
         if switchStrobe.on{
-            strobeTheLight(stepperStrobe.value)
-            print("strobe is on")
-            switchFlashlight.enabled = false
+            let alertController = UIAlertController(title: "Strobe Warning", message: "Caution, strobe will begin upon clicking 'OK', to cancel press 'Canel'.", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                print("cancelled strobe for caution.")
+                self.switchStrobe.on = false
+                
+            }
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                self.strobeTheLight(self.stepperStrobe.value)
+                print("strobe is on")
+                self.switchFlashlight.enabled = false            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+            }
+//            strobeTheLight(stepperStrobe.value)
+//            print("strobe is on")
+//            switchFlashlight.enabled = false
             
         }else{
             switchFlashlight.enabled = true

@@ -26,70 +26,72 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <color key="backgroundColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
-                                <rect key="frame" x="276" y="434" width="51" height="31"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
-                                <rect key="frame" x="226" y="388" width="148" height="25"/>
-                                <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashlight Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-tN-ykP">
-                                <rect key="frame" x="212" y="98" width="176" height="25"/>
-                                <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
-                                <color key="textColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pOQ-iy-Cq8">
-                                <rect key="frame" x="276" y="155" width="51" height="31"/>
-                                <color key="tintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="onTintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="toggleFlashlight:" destination="uha-mG-RO4" eventType="valueChanged" id="ZgD-qt-Bd2"/>
-                                </connections>
-                            </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
-                                <rect key="frame" x="73" y="205" width="454" height="31"/>
-                                <color key="tintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="8c5-cI-5jk"/>
-                                </connections>
-                            </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
-                                <rect key="frame" x="253" y="489" width="94" height="29"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="ial-s7-Fgv"/>
-                                </connections>
-                            </stepper>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="09P-8W-mDC">
+                                <rect key="frame" x="226" y="388" width="148" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
+                                        <rect key="frame" x="0.0" y="1" width="148" height="25"/>
+                                        <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
+                                        <rect key="frame" x="50" y="36" width="51" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
+                                        </connections>
+                                    </switch>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minimumValue="-1" maximumValue="-0.10000000000000001" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-LU-jhd">
+                                        <rect key="frame" x="27" y="77" width="94" height="29"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="ial-s7-Fgv"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dZS-ga-E22">
+                                <rect key="frame" x="73" y="98" width="450" height="106"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashlight Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-tN-ykP">
+                                        <rect key="frame" x="137" y="0.0" width="176" height="25"/>
+                                        <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
+                                        <color key="textColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pOQ-iy-Cq8">
+                                        <rect key="frame" x="201" y="35" width="51" height="31"/>
+                                        <color key="tintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="onTintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="toggleFlashlight:" destination="uha-mG-RO4" eventType="valueChanged" id="ZgD-qt-Bd2"/>
+                                        </connections>
+                                    </switch>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-Xh-3SX">
+                                        <rect key="frame" x="-2" y="76" width="454" height="31"/>
+                                        <color key="tintColor" red="0.27535130029999999" green="0.91335465599999999" blue="0.19145868290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="uha-mG-RO4" eventType="valueChanged" id="8c5-cI-5jk"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="centerY" secondItem="Jif-cz-u95" secondAttribute="centerY" id="4CL-Hf-mPV"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="top" secondItem="eDd-3i-Qtb" secondAttribute="bottom" id="6ZI-YI-Cjj"/>
-                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="top" secondItem="pOQ-iy-Cq8" secondAttribute="bottom" constant="19" id="75M-XO-dLM"/>
-                            <constraint firstItem="0Qf-Ee-DZn" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="866-ui-rrl"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="height" secondItem="1Sj-0o-Z5Y" secondAttribute="height" multiplier="0.5" id="9Xd-Px-v9a"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="centerX" secondItem="1Sj-0o-Z5Y" secondAttribute="centerX" id="9qX-I8-lI8"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="width" secondItem="1Sj-0o-Z5Y" secondAttribute="width" id="9qy-af-9bo"/>
-                            <constraint firstItem="0Qf-Ee-DZn" firstAttribute="centerY" secondItem="7rn-n5-DrN" secondAttribute="centerY" id="FyL-sZ-JU9"/>
-                            <constraint firstItem="0Qf-Ee-DZn" firstAttribute="top" secondItem="Ecb-lB-RFA" secondAttribute="bottom" constant="21" id="MZC-cf-20D"/>
+                            <constraint firstItem="09P-8W-mDC" firstAttribute="centerY" secondItem="7rn-n5-DrN" secondAttribute="centerY" id="Mw2-Cn-meq"/>
                             <constraint firstItem="Jif-cz-u95" firstAttribute="centerX" secondItem="1Sj-0o-Z5Y" secondAttribute="centerX" id="NsG-U7-9l1"/>
-                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="SY8-zC-fLj"/>
-                            <constraint firstItem="CJG-tN-ykP" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="TnJ-I6-Sjp"/>
-                            <constraint firstItem="Ecb-lB-RFA" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="XKf-s3-EGs"/>
-                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" multiplier="0.75" id="YYL-hh-xvn"/>
-                            <constraint firstItem="pOQ-iy-Cq8" firstAttribute="top" secondItem="CJG-tN-ykP" secondAttribute="bottom" constant="32" id="hGQ-OE-FpT"/>
+                            <constraint firstItem="dZS-ga-E22" firstAttribute="centerY" secondItem="Jif-cz-u95" secondAttribute="centerY" id="OWF-Wu-Dbh"/>
+                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" multiplier="0.75" id="Quw-ag-JhO"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="width" secondItem="Jif-cz-u95" secondAttribute="width" id="jSh-Wm-tFV"/>
-                            <constraint firstItem="n3S-LU-jhd" firstAttribute="centerX" secondItem="0Qf-Ee-DZn" secondAttribute="centerX" id="lUE-9o-Pys"/>
-                            <constraint firstItem="n3S-LU-jhd" firstAttribute="top" secondItem="0Qf-Ee-DZn" secondAttribute="bottom" constant="24" id="sF3-zk-sBD"/>
+                            <constraint firstItem="09P-8W-mDC" firstAttribute="centerX" secondItem="7rn-n5-DrN" secondAttribute="centerX" id="s8O-QK-70K"/>
+                            <constraint firstItem="dZS-ga-E22" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="tGb-r2-XJp"/>
                             <constraint firstItem="anq-P7-kbJ" firstAttribute="top" secondItem="7rn-n5-DrN" secondAttribute="bottom" id="tX4-zZ-usL"/>
-                            <constraint firstItem="4Z2-Xh-3SX" firstAttribute="centerX" secondItem="Jif-cz-u95" secondAttribute="centerX" id="uXR-Xg-2Qd"/>
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="height" secondItem="Jif-cz-u95" secondAttribute="height" id="vmj-ah-aG7"/>
                         </constraints>
                     </view>

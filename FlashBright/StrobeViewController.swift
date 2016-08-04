@@ -21,6 +21,7 @@ class StrobeViewController: UIViewController {
     @IBOutlet weak var sliderFlashlight: UISlider!
     
     
+    @IBOutlet weak var flashlightIcon: UILabel!
     
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var onTimer = NSTimer()
@@ -28,7 +29,7 @@ class StrobeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        flashlightIcon.hidden = true
         switchStrobe.enabled = true
         switchFlashlight.enabled = true
         
@@ -45,11 +46,16 @@ class StrobeViewController: UIViewController {
         }else{
             switchStrobe.enabled = true
             turnLightOff()
+            flashlightIcon.hidden = true
+
         }
         
     }
     
     @IBAction func sliderValueChanged(sender: UISlider!) {
+        flashlightIcon.alpha = CGFloat(sender.value)
+        flashlightIcon.hidden = false
+
         if switchFlashlight.on{
             let currentValue : Float = sender.value
             do {
@@ -94,6 +100,7 @@ class StrobeViewController: UIViewController {
             onTimer.invalidate()
             offTimer.invalidate()
             turnLightOff()
+            flashlightIcon.hidden = true
             print("strobe is off")
             
         }
@@ -101,6 +108,9 @@ class StrobeViewController: UIViewController {
     }
     
     func turnLightOn(){
+        flashlightIcon.alpha = 1.0
+        flashlightIcon.hidden = true
+        
         do {
             try device.lockForConfiguration()
             device.torchMode = AVCaptureTorchMode.On
@@ -111,6 +121,9 @@ class StrobeViewController: UIViewController {
     }
     
     func turnLightOff(){
+        flashlightIcon.alpha = 1.0
+
+        flashlightIcon.hidden = false
         do {
             try device.lockForConfiguration()
             

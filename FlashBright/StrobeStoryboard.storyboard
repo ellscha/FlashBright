@@ -29,12 +29,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="09P-8W-mDC">
                                 <rect key="frame" x="226" y="388" width="450" height="106"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strobe Controls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-lB-RFA">
                                         <rect key="frame" x="151" y="0.0" width="148" height="25"/>
                                         <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="21"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-Ee-DZn">
                                         <rect key="frame" x="201" y="35" width="51" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +42,7 @@
                                             <action selector="toggleStrobe:" destination="uha-mG-RO4" eventType="valueChanged" id="qX3-36-hLs"/>
                                         </connections>
                                     </switch>
-                                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minValue="-1" maxValue="-0.01" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-q0-zcl">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-0.5" minValue="-1" maxValue="-0.01" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-q0-zcl">
                                         <rect key="frame" x="-2" y="76" width="454" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>

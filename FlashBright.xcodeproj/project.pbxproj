@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D225C211D5A5C9000360AB8 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D225C201D5A5C9000360AB8 /* AlarmClockViewController.swift */; };
+		4D2D045B1D735D17001014D8 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D045A1D735D17001014D8 /* TabBarController.storyboard */; };
+		4D2D045D1D736F22001014D8 /* alarm-clock-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D045C1D736F22001014D8 /* alarm-clock-1.caf */; };
 		4D325FED1D48D6B00019B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D325FEC1D48D6B00019B650 /* AppDelegate.swift */; };
 		4D325FF41D48D6B00019B650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D325FF31D48D6B00019B650 /* Assets.xcassets */; };
 		4D325FF71D48D6B00019B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D325FF51D48D6B00019B650 /* LaunchScreen.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		4D225C201D5A5C9000360AB8 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
+		4D2D045A1D735D17001014D8 /* TabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
+		4D2D045C1D736F22001014D8 /* alarm-clock-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "alarm-clock-1.caf"; path = "Assets.xcassets/alarm-clock-1.caf"; sourceTree = "<group>"; };
 		4D325FE91D48D6B00019B650 /* FlashBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D325FEC1D48D6B00019B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D325FF31D48D6B00019B650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +64,9 @@
 				4D75644E1D50D97600AEC067 /* StrobeViewController.swift */,
 				4D225C201D5A5C9000360AB8 /* AlarmClockViewController.swift */,
 				4D7564501D50D9AF00AEC067 /* StrobeStoryboard.storyboard */,
+				4D2D045A1D735D17001014D8 /* TabBarController.storyboard */,
 				4D325FF31D48D6B00019B650 /* Assets.xcassets */,
+				4D2D045C1D736F22001014D8 /* alarm-clock-1.caf */,
 				4D325FF51D48D6B00019B650 /* LaunchScreen.storyboard */,
 				4D325FF81D48D6B00019B650 /* Info.plist */,
 			);
@@ -128,7 +134,9 @@
 			files = (
 				4D325FF71D48D6B00019B650 /* LaunchScreen.storyboard in Resources */,
 				4D325FF41D48D6B00019B650 /* Assets.xcassets in Resources */,
+				4D2D045B1D735D17001014D8 /* TabBarController.storyboard in Resources */,
 				4D7564511D50D9AF00AEC067 /* StrobeStoryboard.storyboard in Resources */,
+				4D2D045D1D736F22001014D8 /* alarm-clock-1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

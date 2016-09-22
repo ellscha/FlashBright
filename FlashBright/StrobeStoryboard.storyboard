@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uha-mG-RO4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9KK-jt-mmZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Strobe View Controller-->
+        <!--Strobe-->
         <scene sceneID="25R-q4-2tu">
             <objects>
-                <viewController id="uha-mG-RO4" customClass="StrobeViewController" customModule="FlashBright" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Strobe" title="Strobe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uha-mG-RO4" customClass="StrobeViewController" customModule="FlashBright" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDd-3i-Qtb"/>
                         <viewControllerLayoutGuide type="bottom" id="anq-P7-kbJ"/>
@@ -103,6 +103,7 @@
                             <constraint firstItem="7rn-n5-DrN" firstAttribute="height" secondItem="Jif-cz-u95" secondAttribute="height" id="vmj-ah-aG7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2w6-xf-V7O"/>
                     <connections>
                         <outlet property="flashlightIcon" destination="bWj-uS-R4a" id="Ro0-B1-Xgv"/>
                         <outlet property="sliderFlashlight" destination="4Z2-Xh-3SX" id="bob-li-ZIZ"/>
@@ -113,7 +114,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdE-dK-px5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="185"/>
+            <point key="canvasLocation" x="1906" y="185"/>
+        </scene>
+        <!--Alarm-->
+        <scene sceneID="Bxc-SS-cdk">
+            <objects>
+                <viewController storyboardIdentifier="Alarm" title="Alarm" id="9KK-jt-mmZ" customClass="AlarmClockViewController" customModule="FlashBright" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qkt-gY-i6a"/>
+                        <viewControllerLayoutGuide type="bottom" id="ROV-hO-E1U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u7k-70-2Kd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q1F-4O-c2m">
+                                <rect key="frame" x="0.0" y="30" width="600" height="360"/>
+                                <date key="date" timeIntervalSinceReferenceDate="494098882.25877398">
+                                    <!--2016-08-28 17:41:22 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZg-zv-KSN">
+                                <rect key="frame" x="267" y="419" width="67" height="30"/>
+                                <state key="normal" title="Set Alarm"/>
+                                <connections>
+                                    <action selector="alarmSetTapped:" destination="9KK-jt-mmZ" eventType="touchUpInside" id="u4T-mw-OYH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpx-Al-BGq">
+                                <rect key="frame" x="254" y="457" width="92" height="30"/>
+                                <state key="normal" title="Cancel Alarm"/>
+                                <connections>
+                                    <action selector="alarmCancelTapped:" destination="9KK-jt-mmZ" eventType="touchUpInside" id="bbS-hh-DeM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q1F-4O-c2m" firstAttribute="top" secondItem="Qkt-gY-i6a" secondAttribute="bottom" constant="10" id="0Hf-6t-5cC"/>
+                            <constraint firstItem="q1F-4O-c2m" firstAttribute="width" secondItem="u7k-70-2Kd" secondAttribute="width" id="5FU-5h-uxC"/>
+                            <constraint firstItem="Hpx-Al-BGq" firstAttribute="top" secondItem="LZg-zv-KSN" secondAttribute="bottom" constant="8" id="C0W-Wo-Oa7"/>
+                            <constraint firstItem="Hpx-Al-BGq" firstAttribute="centerX" secondItem="u7k-70-2Kd" secondAttribute="centerX" id="Kfv-hU-8HS"/>
+                            <constraint firstItem="q1F-4O-c2m" firstAttribute="centerX" secondItem="u7k-70-2Kd" secondAttribute="centerX" id="LBc-yr-PRy"/>
+                            <constraint firstItem="q1F-4O-c2m" firstAttribute="centerY" secondItem="u7k-70-2Kd" secondAttribute="centerY" id="Rtr-R7-37Q"/>
+                            <constraint firstItem="LZg-zv-KSN" firstAttribute="top" secondItem="q1F-4O-c2m" secondAttribute="bottom" constant="29" id="WoU-NM-uhA"/>
+                            <constraint firstItem="q1F-4O-c2m" firstAttribute="height" secondItem="u7k-70-2Kd" secondAttribute="height" multiplier="0.6" id="eCw-Ij-XiC"/>
+                            <constraint firstItem="LZg-zv-KSN" firstAttribute="centerX" secondItem="u7k-70-2Kd" secondAttribute="centerX" id="mA8-Kn-31M"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Rtr-R7-37Q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Al3-fM-Gbc"/>
+                    <connections>
+                        <outlet property="alarmPicker" destination="q1F-4O-c2m" id="Cfw-4p-jma"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wc9-qx-3Ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="976"/>
         </scene>
     </scenes>
 </document>
